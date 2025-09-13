@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple MP3 Player</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>MP3 Player</h1>
+        </header>
+
+        <div class="main-content">
+            <div class="sidebar">
+                <h3>Folders</h3>
+                <div id="folderList" class="folder-list">
+                    <div class="loading">Loading folders...</div>
+                </div>
+            </div>
+
+            <div class="content">
+                <div id="loginForm" class="login-form hidden">
+                    <h3>Enter credentials for <span id="folderName"></span></h3>
+                    <form id="authForm">
+                        <input type="text" id="username" placeholder="Username" required>
+                        <input type="password" id="password" placeholder="Password" required>
+                        <button type="submit">Login</button>
+                        <button type="button" id="cancelLogin">Cancel</button>
+                    </form>
+                </div>
+
+                <div id="fileList" class="file-list">
+                    <div class="placeholder">Select a folder to view MP3 files</div>
+                </div>
+
+                <div id="searchContainer" class="search-container hidden">
+                    <input type="text" id="searchInput" placeholder="Search files...">
+                </div>
+            </div>
+        </div>
+
+        <div class="player-container">
+            <div class="player">
+                <div class="player-info">
+                    <div id="currentTrack" class="current-track">No track selected</div>
+                    <div id="trackTime" class="track-time">--:-- / --:--</div>
+                </div>
+
+                <audio id="audioPlayer" controls>
+                    Your browser does not support the audio element.
+                </audio>
+
+                <div class="playlist-controls">
+                    <button id="prevTrack" disabled>Previous</button>
+                    <button id="nextTrack" disabled>Next</button>
+                    <button id="shuffle" class="shuffle-btn">Shuffle</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
